@@ -66,4 +66,10 @@ class Demo(object):
         optionmenu = OptionMenu(label_frame, self.option, *self.options)
         optionmenu.grid(column=0, row=5)
 
-        
+        combobox = ttk.Combobox(label_frame, values=self.options)
+        combobox.grid(column=1, row=5)
+        combobox.current(0)
+
+        progress = Progressbar(label_frame, orient=HORIZONTAL, length=100, mode='determinate')
+        progress["values"] = 25
+        progress.grid(column=2, row=5)
