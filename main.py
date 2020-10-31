@@ -40,3 +40,13 @@ class Demo(object):
 
         Checkbutton = Checkbutton(label_frame, text = "Check")
         Checkbutton.grid(column=0, row=3)
+
+        button = Button(label_frame, text="Button")
+        button.grid(column=0, row=3)
+
+        menubutton = Menubutton(label_frame, text="Menu Button")
+        menubutton.grid(column=1, row=3)
+        menubutton.menu = Menu(menubutton, tearoff=0)
+        menubutton["menu"] = menubutton.menu
+        menubutton.menu.add_checkbutton(label="first", variable=None)
+        menubutton.menu.add_checkbutton(Label="last", variable=None)
