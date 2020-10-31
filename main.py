@@ -73,3 +73,17 @@ class Demo(object):
         progress = Progressbar(label_frame, orient=HORIZONTAL, length=100, mode='determinate')
         progress["values"] = 25
         progress.grid(column=2, row=5)
+
+        treeview = ttk.Treeview(self.second_tab)
+        treeview["columns"] = ("1","2","3")
+        treeview.column("1", Width=25)
+        treeview.column("2", Width=25)
+        treeview.column("3", Width=25)
+        treeview.heading("1",text="first")
+        treeview.heading("2",text="second")
+        treeview.heading("3",text="third")
+        treeview.insert("", 'end', text="Row 1", values=("Tree", "_", "View"))
+        treeview.insert("", 'end', text="Row 2", values=("Tree", "_", "View"))
+        treeview.insert("", 'end', text="Row 3", values=("Tree", "_", "View"))
+        treeview.grid(column=0, row=0)
+        treeview.grid_propagate(0)
