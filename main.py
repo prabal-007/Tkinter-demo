@@ -50,3 +50,20 @@ class Demo(object):
         menubutton["menu"] = menubutton.menu
         menubutton.menu.add_checkbutton(label="first", variable=None)
         menubutton.menu.add_checkbutton(Label="last", variable=None)
+
+        scale = Scale(label_frame, from=0, to=100, orient=HORIZONTAL)
+        scale.grid(column=0, row=4)
+
+        Scrollbar = Scrollbar(label_frame)
+        Scrollbar.grid(column=2, row=4)
+
+        list = Listbox(label_frame, yscrollcommand = Scrollbar.set, height=5)
+        for line in range(5):
+            list.insert(END, "Listbox Element " +str(line))
+        list.grid(column=2, row=4)
+        Scrollbar.config(command=list.yview)
+
+        optionmenu = OptionMenu(label_frame, self.option, *self.options)
+        optionmenu.grid(column=0, row=5)
+
+        
