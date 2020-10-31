@@ -87,3 +87,9 @@ class Demo(object):
         treeview.insert("", 'end', text="Row 3", values=("Tree", "_", "View"))
         treeview.grid(column=0, row=0)
         treeview.grid_propagate(0)
+
+if __name__ == "__main__":
+    root = Tk()
+    root.title("Tkinter Demo")
+    Demo(root)
+    root.mainloop()
